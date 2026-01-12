@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist Saver</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="loading" class="view">Loading...</div>
+
+      <div id="auth-view" class="view hidden">
+        <h2>Welcome Back</h2>
+        <p>Login to save items</p>
+        <input type="email" id="email" placeholder="Email address" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="btn-login">Login</button>
+        <button id="btn-signup" class="secondary">Sign Up</button>
+        <p id="auth-error" class="error"></p>
+      </div>
+
+      <div id="main-view" class="view hidden">
+        <div class="product-preview">
+          <img id="p-image" src="" alt="Product Image" />
+          <div class="p-details">
+            <h3 id="p-title">Loading product...</h3>
+            <span id="p-price"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="wishlist-select">Select Wishlist</label>
+          <select id="wishlist-select" name="wishlist"></select>
+        </div>
+
+        <div class="form-group">
+          <button id="btn-create-new-toggle" class="text-btn">
+            + Create New Wishlist
+          </button>
+          <div id="new-wishlist-form" class="hidden">
+            <input
+              type="text"
+              id="new-wishlist-name"
+              placeholder="Wishlist Name (e.g., Tech)"
+              aria-label="New wishlist name"
+            />
+            <button id="btn-create-wishlist" class="small-btn">Create</button>
+          </div>
+        </div>
+
+        <button id="btn-add">Add to Wishlist</button>
+        <p id="msg-success" class="success hidden">Saved successfully!</p>
+        <p id="msg-error" class="error hidden"></p>
+
+        <button id="btn-logout" class="text-btn bottom">Logout</button>
+      </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
